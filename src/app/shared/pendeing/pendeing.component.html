@@ -1,0 +1,45 @@
+<div class="container mt-4">
+  <div class="bg-light rounded-3 shadow-lg p-4" style="max-width: 900px; margin: auto;">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-clock me-3 text-success" style="font-size: 30px; color:#28a745"></i>
+        <h5 class="m-0">Pending Requests</h5>
+      </div>
+    </div>
+ 
+    <!-- Pending Requests Cards -->
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div class="col" *ngFor="let request of pendingRequests">
+        <div class="card shadow-sm" style="border-radius: 10px;">
+          <div class="card-body text-center">
+            <div class="d-flex align-items-center justify-content-center mb-3">
+              <img
+                [src]="request.profileImage"
+                alt="Profile Image"
+                class="rounded-circle me-3"
+                width="80"
+                height="80"
+              />
+              <h6 class="mb-0">{{ request.name }}</h6>
+            </div>
+
+            <p class="font-weight-bold text-secondary mb-1">Submitted on:</p>
+            <p class="text-dark">{{ request.submittedOn }}</p>
+            <p class="font-weight-bold text-secondary mb-1">Duration:</p>
+            <p class="text-dark">{{ request.duration }}</p>
+            <p class="font-weight-bold text-secondary mb-1">Currently at:</p>
+            <p class="text-success">{{ request.currentAt }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Link aligned to the right -->
+    <div class="text-end mt-3">
+      <a routerLink="/vacation" class="text-success text-decoration-none">
+        View More <i class="fas fa-angle-right ms-2"></i>
+      </a>
+    </div>
+  </div>
+</div>

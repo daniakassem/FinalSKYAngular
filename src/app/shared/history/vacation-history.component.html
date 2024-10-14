@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="bg-light rounded-3 shadow-lg p-4" style="max-width: 900px; margin: auto;">
+    <!-- Header Section -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <div class="d-flex align-items-center">
+        <i class="fas fa-history me-2" style="font-size: 30px; color: #28a745;"></i>
+        <h5 class="m-0">History</h5>
+      </div>
+    </div>
+
+    <!-- Vacation Cards Grid -->
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+      <div class="col" *ngFor="let vacation of vacations">
+        <div class="card shadow-sm" style="border-radius: 10px;">
+          <div class="card-body">
+            <h6 class="card-title mb-1">{{ vacation.type }}</h6>
+            <p class="card-text text-muted mb-0">
+              {{ vacation.startDate }} - {{ vacation.endDate }}
+              <strong>{{ vacation.days }} days</strong>
+            </p>
+            <p class="text-muted mb-0">Approved by: {{ vacation.approvedBy }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View More Link -->
+    <div class="text-end mt-3">
+      <a
+        routerLink="/vacation"
+        class="text-success"
+        style="text-decoration: none; font-weight: bold;"
+      >
+        View More &gt;
+      </a>
+    </div>
+  </div>
+</div>
